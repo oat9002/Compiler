@@ -24,7 +24,7 @@ int fromBinary();
 "-"							{ return "-"; }
 "*"							{ return "*"; }
 "/"							{ return "/"; }
-"\"							{ return "\"; }
+"\\"						{ return "\\"; }
 {B}+"b"					{ yylval = fromBinary(); return(CONSTANT); }
 {H}+"h"					{ yylval = fromHexa(); return(CONSTANT); }
 {D}+						{ yylval = atoi(yytext); return(CONSTANT); }
