@@ -13,18 +13,45 @@ IS			(u|U|l|L)*
 #include <stdlib.h>
 #include <string.h>
 #include <math.h>
+#include "Mhee.tab.h"
 
 int fromHexa();
 int fromBinary();
 %}
 
 %%
-"\n" 						{ return "\n"; }
-"+"							{ return "+"; }
-"-"							{ return "-"; }
-"*"							{ return "*"; }
-"/"							{ return "/"; }
-"\\"						{ return "\\"; }
+"OR"						{return	OR;}					
+"AND"						{ return AND; }
+"NEG"						{ return NEG; }
+"NOT"						{ return NOT;}
+"\n" 						{ return '\n'; }
+"+"						{ return '+'; }
+"-"						{ return '-'; }
+"*"						{ return '*'; }
+"/"						{ return '/'; }
+"\\"						{ return '\\'; }
+"("						{ return '(';}
+")"						{ return ')';}
+
+"$r0"						{ return R0;}
+"$r1"						{ return R1;}
+"$r2"						{ return R2;}
+"$r3"						{ return R3;}
+"$r4"						{ return R4;}
+"$r5"						{ return R5;}
+"$r6"						{ return R6;}
+"$r7"						{ return R7;}
+"$r8"						{ return R8;}
+"$r9"						{ return R9;}
+"$acc"						{ return ACC;}
+"$top"						{ return TOP;}
+"$size"						{ return SIZE;}
+
+"LOAD"						{ return LOAD;}
+"SHOW"						{ return SHOW;}
+
+">"						{ return '>';} 
+
 {B}+"b"					{ yylval = fromBinary(); return(CONSTANT); }
 {H}+"h"					{ yylval = fromHexa(); return(CONSTANT); }
 {D}+						{ yylval = atoi(yytext); return(CONSTANT); }
@@ -74,16 +101,3 @@ int fromHexa()
 	return result;
 }
 
-int column = 0;
-
-int main(int argc, char **argv)
-{
-	int tok;
-	while(tok = yylex()) {
-		if(tok == BIN)
-			printf("%d\n", fromBinary());
-		else if(tok == HEXA)
-			printf("%d\n", fromHexa());
-	}
-	return 0;
-}
