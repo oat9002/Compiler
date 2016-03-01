@@ -78,7 +78,7 @@
 	int acc;
 	int top;
 	int size;
-	
+
 
 #line 84 "Mhee.tab.c" /* yacc.c:339  */
 
@@ -98,10 +98,7 @@
 # define YYERROR_VERBOSE 0
 #endif
 
-/* In a future release of Bison, this section will be replaced
-   by #include "Mhee.tab.h".  */
-#ifndef YY_YY_MHEE_TAB_H_INCLUDED
-# define YY_YY_MHEE_TAB_H_INCLUDED
+
 /* Debug traces.  */
 #ifndef YYDEBUG
 # define YYDEBUG 0
@@ -150,11 +147,11 @@ extern YYSTYPE yylval;
 
 int yyparse (void);
 
-#endif /* !YY_YY_MHEE_TAB_H_INCLUDED  */
+
 
 /* Copy the second part of user declarations.  */
 
-#line 158 "Mhee.tab.c" /* yacc.c:358  */
+#line 155 "Mhee.tab.c" /* yacc.c:358  */
 
 #ifdef short
 # undef short
@@ -1268,71 +1265,71 @@ yyreduce:
     {
         case 5:
 #line 34 "Mhee.y" /* yacc.c:1646  */
-    { printf("%d\n",(yyvsp[-1]));}
-#line 1273 "Mhee.tab.c" /* yacc.c:1646  */
+    { printf("%d\n",(yyvsp[-1])); }
+#line 1270 "Mhee.tab.c" /* yacc.c:1646  */
     break;
 
   case 6:
 #line 35 "Mhee.y" /* yacc.c:1646  */
-    {printf("%d\n",(yyvsp[-1]));}
-#line 1279 "Mhee.tab.c" /* yacc.c:1646  */
+    { printf("%d\n",(yyvsp[-1])); }
+#line 1276 "Mhee.tab.c" /* yacc.c:1646  */
     break;
 
   case 7:
 #line 36 "Mhee.y" /* yacc.c:1646  */
     {
- 		if( (yyvsp[-3]) == TOP || (yyvsp[-3]) == SIZE){ printf("Can't assign $top or $size to register.");}
-		else if( (yyvsp[-1]) == TOP || (yyvsp[-1]) == SIZE){ printf("Can't assign register to $top or $size.");}
-		else {r[(yyvsp[-1])] = r[(yyvsp[-3])];} }
-#line 1288 "Mhee.tab.c" /* yacc.c:1646  */
+ 										if( (yyvsp[-3]) == TOP || (yyvsp[-3]) == SIZE){ printf("Can't assign $top or $size to register.");}
+										else if( (yyvsp[-1]) == TOP || (yyvsp[-1]) == SIZE){ printf("Can't assign register to $top or $size.");}
+										else {printf("%d %d\n",(yyvsp[-3]) ,(yyvsp[-1])); }}
+#line 1285 "Mhee.tab.c" /* yacc.c:1646  */
     break;
 
   case 8:
 #line 40 "Mhee.y" /* yacc.c:1646  */
     { yyerrok; }
-#line 1294 "Mhee.tab.c" /* yacc.c:1646  */
+#line 1291 "Mhee.tab.c" /* yacc.c:1646  */
     break;
 
   case 9:
 #line 41 "Mhee.y" /* yacc.c:1646  */
     {(yyval) = (yyvsp[0]);}
-#line 1300 "Mhee.tab.c" /* yacc.c:1646  */
+#line 1297 "Mhee.tab.c" /* yacc.c:1646  */
     break;
 
   case 10:
 #line 42 "Mhee.y" /* yacc.c:1646  */
     {(yyval) = (yyvsp[-2]) | (yyvsp[0]);}
-#line 1306 "Mhee.tab.c" /* yacc.c:1646  */
+#line 1303 "Mhee.tab.c" /* yacc.c:1646  */
     break;
 
   case 11:
 #line 43 "Mhee.y" /* yacc.c:1646  */
     {(yyval) = (yyvsp[-2]) & (yyvsp[0]);}
-#line 1312 "Mhee.tab.c" /* yacc.c:1646  */
+#line 1309 "Mhee.tab.c" /* yacc.c:1646  */
     break;
 
   case 12:
 #line 44 "Mhee.y" /* yacc.c:1646  */
     {(yyval) = ~(yyvsp[0]);}
-#line 1318 "Mhee.tab.c" /* yacc.c:1646  */
+#line 1315 "Mhee.tab.c" /* yacc.c:1646  */
     break;
 
   case 13:
 #line 45 "Mhee.y" /* yacc.c:1646  */
     {(yyval) = (yyvsp[-2]) + (yyvsp[0]);}
-#line 1324 "Mhee.tab.c" /* yacc.c:1646  */
+#line 1321 "Mhee.tab.c" /* yacc.c:1646  */
     break;
 
   case 14:
 #line 46 "Mhee.y" /* yacc.c:1646  */
     {(yyval) = (yyvsp[-2]) - (yyvsp[0]);}
-#line 1330 "Mhee.tab.c" /* yacc.c:1646  */
+#line 1327 "Mhee.tab.c" /* yacc.c:1646  */
     break;
 
   case 15:
 #line 47 "Mhee.y" /* yacc.c:1646  */
     {(yyval) = (yyvsp[-2]) * (yyvsp[0]);}
-#line 1336 "Mhee.tab.c" /* yacc.c:1646  */
+#line 1333 "Mhee.tab.c" /* yacc.c:1646  */
     break;
 
   case 16:
@@ -1340,7 +1337,7 @@ yyreduce:
     { if((yyvsp[0])==0)
 		{yyerror("Can't divide by 0.");}
 		else (yyval) = (yyvsp[-2]) / (yyvsp[0]);}
-#line 1344 "Mhee.tab.c" /* yacc.c:1646  */
+#line 1341 "Mhee.tab.c" /* yacc.c:1646  */
     break;
 
   case 17:
@@ -1349,29 +1346,101 @@ yyreduce:
 		{yyerror("Can't divide by 0."); }
 		else
 		(yyval) = (yyvsp[-2]) % (yyvsp[0]);}
-#line 1353 "Mhee.tab.c" /* yacc.c:1646  */
+#line 1350 "Mhee.tab.c" /* yacc.c:1646  */
     break;
 
   case 18:
 #line 55 "Mhee.y" /* yacc.c:1646  */
     {(yyval) = -(yyvsp[0]);}
-#line 1359 "Mhee.tab.c" /* yacc.c:1646  */
+#line 1356 "Mhee.tab.c" /* yacc.c:1646  */
     break;
 
   case 19:
 #line 56 "Mhee.y" /* yacc.c:1646  */
     {(yyval) = pow((yyvsp[-2]),(yyvsp[0]));}
-#line 1365 "Mhee.tab.c" /* yacc.c:1646  */
+#line 1362 "Mhee.tab.c" /* yacc.c:1646  */
     break;
 
   case 20:
 #line 57 "Mhee.y" /* yacc.c:1646  */
     {(yyval) = (yyvsp[-1]);}
-#line 1371 "Mhee.tab.c" /* yacc.c:1646  */
+#line 1368 "Mhee.tab.c" /* yacc.c:1646  */
+    break;
+
+  case 22:
+#line 59 "Mhee.y" /* yacc.c:1646  */
+    {(yyval) = R1; }
+#line 1374 "Mhee.tab.c" /* yacc.c:1646  */
+    break;
+
+  case 23:
+#line 60 "Mhee.y" /* yacc.c:1646  */
+    {(yyval) = R2; }
+#line 1380 "Mhee.tab.c" /* yacc.c:1646  */
+    break;
+
+  case 24:
+#line 61 "Mhee.y" /* yacc.c:1646  */
+    {(yyval) = R3; }
+#line 1386 "Mhee.tab.c" /* yacc.c:1646  */
+    break;
+
+  case 25:
+#line 62 "Mhee.y" /* yacc.c:1646  */
+    {(yyval) = R4; }
+#line 1392 "Mhee.tab.c" /* yacc.c:1646  */
+    break;
+
+  case 26:
+#line 63 "Mhee.y" /* yacc.c:1646  */
+    {(yyval) = R5; }
+#line 1398 "Mhee.tab.c" /* yacc.c:1646  */
+    break;
+
+  case 27:
+#line 64 "Mhee.y" /* yacc.c:1646  */
+    {(yyval) = R6; }
+#line 1404 "Mhee.tab.c" /* yacc.c:1646  */
+    break;
+
+  case 28:
+#line 65 "Mhee.y" /* yacc.c:1646  */
+    {(yyval) = R7; }
+#line 1410 "Mhee.tab.c" /* yacc.c:1646  */
+    break;
+
+  case 29:
+#line 66 "Mhee.y" /* yacc.c:1646  */
+    {(yyval) = R8; }
+#line 1416 "Mhee.tab.c" /* yacc.c:1646  */
+    break;
+
+  case 30:
+#line 67 "Mhee.y" /* yacc.c:1646  */
+    {(yyval) = R9; }
+#line 1422 "Mhee.tab.c" /* yacc.c:1646  */
+    break;
+
+  case 31:
+#line 68 "Mhee.y" /* yacc.c:1646  */
+    {(yyval) = ACC; }
+#line 1428 "Mhee.tab.c" /* yacc.c:1646  */
+    break;
+
+  case 32:
+#line 69 "Mhee.y" /* yacc.c:1646  */
+    {(yyval) = TOP; }
+#line 1434 "Mhee.tab.c" /* yacc.c:1646  */
+    break;
+
+  case 33:
+#line 70 "Mhee.y" /* yacc.c:1646  */
+    {(yyval) = SIZE; }
+#line 1440 "Mhee.tab.c" /* yacc.c:1646  */
     break;
 
 
-#line 1375 "Mhee.tab.c" /* yacc.c:1646  */
+#line 1444 "Mhee.tab.c" /* yacc.c:1646  */
       default: break;
     }
   /* User semantic actions sometimes alter yychar, and that requires
