@@ -1,3 +1,4 @@
 *.tab.c
 a.out
 *.tab.h.gch
+*.tab.h
