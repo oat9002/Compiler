@@ -18,7 +18,8 @@
 	int acc;
 	int top;
 	int size;
-
+	void push(int data);
+	int pop();
 %}
 /*token*/
 %token R0 0 R1 1 R2 2 R3 3 R4 4 R5 5 R6 6 R7 7 R8 8 R9 9
@@ -49,11 +50,11 @@ line :	'\n'
 															else if($2 == ACC && ($4 == TOP || $4 == SIZE)) {printf("Can't assign $acc to $top or $size.\n"); }
 									  					else if($4 == ACC){printf("Can't assign reg or $top or $size to $acc.\n");}
 															else { r[$4] = r[$2];}}
-	| PUSH reg 					{ if($2 != ACC && $2 != TOP && $2 != SIZE) { push(head,r[$2]); }
- 												else { if($2 == ACC) { push(head, acc); }
-											 				 else if($2 == TOP) {push(head, top); }
-														 	 else if($2 == SIZE) {push(head, size); } } }
-	| POP reg						{ if($2 != ACC && $2 != TOP && $2 != SIZE) {r[$2] = pop(head); }
+	| PUSH reg 					{ if($2 != ACC && $2 != TOP && $2 != SIZE) { push(r[$2]); }
+ 												else { if($2 == ACC) { push( acc);printf("Mhee\n" ); }
+											 				 else if($2 == TOP) {push(top); }
+														 	 else if($2 == SIZE) {push(size); } } }
+	| POP reg						{ if($2 != ACC && $2 != TOP && $2 != SIZE) {r[$2] = pop(); }
 												else { printf("Can't assign number to $acc or $top or $size\n");}}
 	| error '\n'				{ yyerrok; }
 exp :	  CONSTANT {$$ = $1; acc = $1;}
@@ -100,18 +101,20 @@ Stack* init(int data, Stack *s) {
 	return temp;
 }
 
-void push(Stack *head,int data) {
+void push(int data) {
 	if(head != NULL) {
+		printf("Jwinut\n" );
 		Stack* temp = init(data, head);
-		*head = *temp;
+		head = temp;
 	}
 	else {
-		Stack *temp = init(data, NULL);
-		*head = *temp;
+		printf("JMheeinut\n" );
+		Stack* temp = init(data, NULL);
+		head = temp;
 	}
 }
 
-int pop(Stack *head) {
+int pop() {
 	if(head != NULL) {
 		Stack *temp = head;
 		head = (*head).next;
