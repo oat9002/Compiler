@@ -23,7 +23,6 @@
 	void count();
 	void setTopAndSize();
 	int isEmpty();
-	}
 %}
 /*token*/
 %token R0 0 R1 1 R2 2 R3 3 R4 4 R5 5 R6 6 R7 7 R8 8 R9 9
@@ -58,9 +57,9 @@ line :	'\n'
  												else { if($2 == ACC) { push( acc); }
 											 				 else if($2 == TOP) {push(top); }
 														 	 else if($2 == SIZE) {push(size); } } setTopAndSize();}
-	| POP reg						{ if($2 != ACC && $2 != TOP && $2 != SIZE) {if(!isEmpty) { r[$2] = pop(); }
- 																																	else { printf("Stack is Empty.\n"); }}
-												else { printf("Can't assign number to $acc or $top or $size\n");} setTopAndSize();}
+	| POP reg						{ if($2 != ACC && $2 != TOP && $2 != SIZE) { if(!isEmpty()) { r[$2] = pop(); setTopAndSize(); }
+ 																																	 else { printf("Stack is Empty.\n"); } }
+												else { printf("Can't assign number to $acc or $top or $size\n");} }
 	| error '\n'				{ yyerrok; }
 exp :	  CONSTANT {$$ = $1; acc = $1;}
 		| exp OR exp	{$$ = $1 | $3; acc = $1 | $3;}
@@ -141,6 +140,7 @@ void count() {
 	while(temp != NULL) {
 		count++;
 		temp = (*temp).next;
+	}
 	size = count;
 }
 
