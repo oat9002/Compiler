@@ -20,7 +20,7 @@ int fromBinary();
 %}
 
 %%
-"OR"						{return	OR;}					
+"OR"						{return	OR;}
 "AND"						{ return AND; }
 "NEG"						{ return NEG; }
 "NOT"						{ return NOT;}
@@ -49,8 +49,10 @@ int fromBinary();
 
 "LOAD"						{ return LOAD;}
 "SHOW"						{ return SHOW;}
+"POP"							{ return POP;}
+"PUSH"						{ return PUSH;}
 
-">"						{ return '>';} 
+">"						{ return '>';}
 
 {B}+"b"					{ yylval = fromBinary(); return(CONSTANT); }
 {H}+"h"					{ yylval = fromHexa(); return(CONSTANT); }
@@ -100,4 +102,3 @@ int fromHexa()
 	}
 	return result;
 }
-
