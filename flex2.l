@@ -1,5 +1,5 @@
 D			[0-9]
-L			[a-zA-Z_]
+L			[a-zA-Z ]
 H			[a-fA-F0-9]
 B			[0-1]
 E			[Ee][+-]?{D}+
@@ -29,6 +29,7 @@ int fromBinary();
 "-"						{ return '-'; }
 "*"						{ return '*'; }
 "/"						{ return '/'; }
+"^"							{return '^';}
 "\\"						{ return '\\'; }
 "("						{ return '(';}
 ")"						{ return ')';}
@@ -52,14 +53,18 @@ int fromBinary();
 "POP"							{ return POP;}
 "PUSH"						{ return PUSH;}
 
+
+
+
 ">"						{ return '>';}
 
 {B}+"b"					{ yylval = fromBinary(); return(CONSTANT); }
 {H}+"h"					{ yylval = fromHexa(); return(CONSTANT); }
 {D}+						{ yylval = atoi(yytext); return(CONSTANT); }
 
+
 [ \t\v\f]		{  }
-.			{ /* ignore bad characters */ }
+.			{ /* ignore bad characters */  return IGNORED; }
 
 %%
 
