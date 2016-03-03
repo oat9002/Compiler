@@ -384,8 +384,8 @@ struct yy_trans_info
 static yyconst flex_int16_t yy_accept[71] =
     {   0,
         0,    0,   38,   36,   35,    5,   36,   12,   13,    8,
-        6,    7,    9,   34,   34,   31,   36,   36,   36,   36,
-       36,   36,   36,   11,   10,    0,    0,    0,    0,   34,
+        6,    7,   10,   34,   34,   31,   36,   36,   36,   36,
+       36,   36,   36,   11,    9,    0,    0,    0,    0,   34,
        34,    0,   32,   33,    0,    0,    0,    0,    1,    0,
         0,    0,    0,   14,   15,   16,   17,   18,   19,   20,
        21,   22,   23,    0,    0,    2,    0,    3,    4,   29,
@@ -518,7 +518,7 @@ int yy_flex_debug = 0;
 #define YY_RESTORE_YY_MORE_OFFSET
 char *yytext;
 #line 1 "flex2.l"
-#line 12 "flex2.l"
+#line 13 "flex2.l"
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -527,7 +527,8 @@ char *yytext;
 
 int fromHexa();
 int fromBinary();
-#line 531 "lex.yy.c"
+void maximumMunch();
+#line 532 "lex.yy.c"
 
 #define INITIAL 0
 
@@ -741,9 +742,9 @@ YY_DECL
 		}
 
 	{
-#line 22 "flex2.l"
+#line 24 "flex2.l"
 
-#line 747 "lex.yy.c"
+#line 748 "lex.yy.c"
 
 	while ( 1 )		/* loops until end-of-file is reached */
 		{
@@ -802,153 +803,153 @@ do_action:	/* This label is used only to access EOF actions. */
 
 case 1:
 YY_RULE_SETUP
-#line 23 "flex2.l"
+#line 25 "flex2.l"
 {return	OR;}
 	YY_BREAK
 case 2:
 YY_RULE_SETUP
-#line 24 "flex2.l"
+#line 26 "flex2.l"
 { return AND; }
 	YY_BREAK
 case 3:
 YY_RULE_SETUP
-#line 25 "flex2.l"
+#line 27 "flex2.l"
 { return NEG; }
 	YY_BREAK
 case 4:
 YY_RULE_SETUP
-#line 26 "flex2.l"
+#line 28 "flex2.l"
 { return NOT;}
 	YY_BREAK
 case 5:
 /* rule 5 can match eol */
 YY_RULE_SETUP
-#line 27 "flex2.l"
+#line 29 "flex2.l"
 { return '\n'; }
 	YY_BREAK
 case 6:
 YY_RULE_SETUP
-#line 28 "flex2.l"
+#line 30 "flex2.l"
 { return '+'; }
 	YY_BREAK
 case 7:
 YY_RULE_SETUP
-#line 29 "flex2.l"
+#line 31 "flex2.l"
 { return '-'; }
 	YY_BREAK
 case 8:
 YY_RULE_SETUP
-#line 30 "flex2.l"
+#line 32 "flex2.l"
 { return '*'; }
 	YY_BREAK
 case 9:
 YY_RULE_SETUP
-#line 31 "flex2.l"
-{ return '/'; }
+#line 33 "flex2.l"
+{ return '^'; }
 	YY_BREAK
 case 10:
 YY_RULE_SETUP
-#line 32 "flex2.l"
-{return '^';}
+#line 34 "flex2.l"
+{ return '/'; }
 	YY_BREAK
 case 11:
 YY_RULE_SETUP
-#line 33 "flex2.l"
+#line 35 "flex2.l"
 { return '\\'; }
 	YY_BREAK
 case 12:
 YY_RULE_SETUP
-#line 34 "flex2.l"
+#line 36 "flex2.l"
 { return '(';}
 	YY_BREAK
 case 13:
 YY_RULE_SETUP
-#line 35 "flex2.l"
+#line 37 "flex2.l"
 { return ')';}
 	YY_BREAK
 case 14:
 YY_RULE_SETUP
-#line 37 "flex2.l"
+#line 40 "flex2.l"
 { return R0;}
 	YY_BREAK
 case 15:
 YY_RULE_SETUP
-#line 38 "flex2.l"
+#line 41 "flex2.l"
 { return R1;}
 	YY_BREAK
 case 16:
 YY_RULE_SETUP
-#line 39 "flex2.l"
+#line 42 "flex2.l"
 { return R2;}
 	YY_BREAK
 case 17:
 YY_RULE_SETUP
-#line 40 "flex2.l"
+#line 43 "flex2.l"
 { return R3;}
 	YY_BREAK
 case 18:
 YY_RULE_SETUP
-#line 41 "flex2.l"
+#line 44 "flex2.l"
 { return R4;}
 	YY_BREAK
 case 19:
 YY_RULE_SETUP
-#line 42 "flex2.l"
+#line 45 "flex2.l"
 { return R5;}
 	YY_BREAK
 case 20:
 YY_RULE_SETUP
-#line 43 "flex2.l"
+#line 46 "flex2.l"
 { return R6;}
 	YY_BREAK
 case 21:
 YY_RULE_SETUP
-#line 44 "flex2.l"
+#line 47 "flex2.l"
 { return R7;}
 	YY_BREAK
 case 22:
 YY_RULE_SETUP
-#line 45 "flex2.l"
+#line 48 "flex2.l"
 { return R8;}
 	YY_BREAK
 case 23:
 YY_RULE_SETUP
-#line 46 "flex2.l"
+#line 49 "flex2.l"
 { return R9;}
 	YY_BREAK
 case 24:
 YY_RULE_SETUP
-#line 47 "flex2.l"
+#line 50 "flex2.l"
 { return ACC;}
 	YY_BREAK
 case 25:
 YY_RULE_SETUP
-#line 48 "flex2.l"
+#line 51 "flex2.l"
 { return TOP;}
 	YY_BREAK
 case 26:
 YY_RULE_SETUP
-#line 49 "flex2.l"
+#line 52 "flex2.l"
 { return SIZE;}
 	YY_BREAK
 case 27:
 YY_RULE_SETUP
-#line 51 "flex2.l"
+#line 54 "flex2.l"
 { return LOAD;}
 	YY_BREAK
 case 28:
 YY_RULE_SETUP
-#line 52 "flex2.l"
+#line 55 "flex2.l"
 { return SHOW;}
 	YY_BREAK
 case 29:
 YY_RULE_SETUP
-#line 53 "flex2.l"
+#line 56 "flex2.l"
 { return POP;}
 	YY_BREAK
 case 30:
 YY_RULE_SETUP
-#line 54 "flex2.l"
+#line 57 "flex2.l"
 { return PUSH;}
 	YY_BREAK
 case 31:
@@ -973,20 +974,20 @@ YY_RULE_SETUP
 	YY_BREAK
 case 35:
 YY_RULE_SETUP
-#line 66 "flex2.l"
+#line 65 "flex2.l"
 {  }
 	YY_BREAK
 case 36:
 YY_RULE_SETUP
-#line 67 "flex2.l"
-{ /* ignore bad characters */   }
+#line 66 "flex2.l"
+{ /* ignore bad characters */ maximumMunch(); return ERR;}
 	YY_BREAK
 case 37:
 YY_RULE_SETUP
-#line 69 "flex2.l"
+#line 68 "flex2.l"
 ECHO;
 	YY_BREAK
-#line 990 "lex.yy.c"
+#line 991 "lex.yy.c"
 case YY_STATE_EOF(INITIAL):
 	yyterminate();
 
@@ -1981,9 +1982,13 @@ void yyfree (void * ptr )
 
 #define YYTABLES_NAME "yytables"
 
-#line 68 "flex2.l"
+#line 67 "flex2.l"
 
 
+
+void maximumMunch(){
+	while(input() != '\n');
+}
 
 int fromBinary()
 {
